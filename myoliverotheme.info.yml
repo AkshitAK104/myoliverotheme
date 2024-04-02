@@ -1,0 +1,16 @@
+name: My Olivero Theme
+type: theme
+description: 'Custom theme for Olivero'
+core_version_requirement: ^10
+base theme: olivero
+
+libraries:
+  - myoliverotheme/global-styling
+
+regions:
+  top_banner: 'Top Banner'
+  logo: 'Logo'
+  navigation: 'Navigation Menu'
+  left_sidebar: 'Left Sidebar'
+  content: 'Content'
+  footer: 'Footer'
