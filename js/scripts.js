@@ -68,4 +68,56 @@ const renderMovies = (movies) => {
   });
 };
 
+const fetchMovies = async (url, params = {}) => {
+  try {
+    setLoading(true);
+    setError('');
+    const query = new URLSearchParams({ api_key: API_KEY, language: 'en-US', page: 1, ...params });
+    const response = await fetch(`${BASE_URL}${url}?${query}`);
+    const data = await response.json();
+    renderMovies(data.results || []);
+  } catch (err) {
+    console.error(err);
+    setError('Failed to load movies. Please try again later.');
+  } finally {
+    setLoading(false);
+  }
+};
 
+const fetchPopularMovies = () => {
+  fetchMovies('/movie/popular');
+};
+
+const searchMovies = (query) => {
+  if (!query.trim()) {
+    fetchPopularMovies();
+    return;
+  }
+  fetchMovies('/search/movie', { query });
+};
+
+const getRecommendations = () => {
+  const selected = [...document.querySelectorAll('.genre-checkbox:checked')].map(cb => cb.value);
+  if (selected.length === 0) {
+    alert('Please select at least one genre first!');
+    return;
+  }
+  fetchMovies('/discover/movie', { with_genres: selected.join(','), sort_by: 'popularity.desc' });
+};
+
+document.getElementById('getRecommendations').addEventListener('click', getRecommendations);
+
+const debounce = (fn, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+};
+
+document.getElementById('movieSearch').addEventListener('input', debounce((e) => {
+  searchMovies(e.target.value);
+}, 300));
+
+// Initial Load
+fetchPopularMovies();
