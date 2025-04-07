@@ -6,6 +6,12 @@ The goal of this project is to build a smart Movie Recommendation System within 
 
 Features like genre-based filtering, search-as-you-type, and user movie ratings (stored via `localStorage`) make the experience smooth and interactive. Designed to be responsive and accessible, the theme leverages Drupal's templating power to create a modern, user-friendly experience directly within the CMS.
 
+## 📄 Project Documentation
+
+For detailed information about the project's objectives, functionalities, and architecture, refer to the full documentation:
+
+➡️ [View Full PDF Documentation](./drupal-olivero-project-information.pdf)
+
 ---
 
 ## ✅ Requirements
