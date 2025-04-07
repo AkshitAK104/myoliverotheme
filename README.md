@@ -12,6 +12,11 @@ For detailed information about the project's objectives, functionalities, and ar
 
 ➡️ [View Full PDF Documentation](./drupal-olivero-project-information.pdf)
 
+
+### 📹 Live VIDEO Demo
+
+[Watch Demo on Google Drive](https://drive.google.com/file/d/1GNKiNIncLvqCQStMY6Mvwjs5zATrHUIj/view?usp=sharing)
+
 ---
 
 ## ✅ Requirements
