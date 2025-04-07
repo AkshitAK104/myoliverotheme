@@ -64,4 +64,9 @@ Before getting started, ensure you have the following tools installed and set up
 
 > 🔁 Replace `"myoliverotheme"` with your actual theme folder name if it differs.
 
+6. Launch the LocalHost:
+   ```bash
+   ddev launch
+  
+   ```
 ---
